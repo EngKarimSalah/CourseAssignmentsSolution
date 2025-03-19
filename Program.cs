@@ -583,24 +583,24 @@
         {
             int[] arr = { 10, 20, 30, 40, 50 };
             Console.WriteLine("Array Elements:");
-            foreach (int num in arr)
-                Console.Write(num + " ");
+            for (int i = 0; i < arr.Length; i++)
+                Console.Write(arr[i] + " ");
             Console.WriteLine();
         }
 
         // 2. Find Maximum & Minimum in an Array
         static void FindMaxMin()
         {
-            int[] arr = new int[5];
-            Console.WriteLine("Enter 5 numbers:");
-            for (int i = 0; i < 5; i++)
+            int[] arr = new int[10];
+            Console.WriteLine("Enter 10 numbers:");
+            for (int i = 0; i < 10; i++)
                 arr[i] = int.Parse(Console.ReadLine());
 
             int max = arr[0], min = arr[0];
-            foreach (int num in arr)
+            for (int i = 1; i < arr.Length; i++)
             {
-                if (num > max) max = num;
-                if (num < min) min = num;
+                if (arr[i] > max) max = arr[i];
+                if (arr[i] < min) min = arr[i];
             }
             Console.WriteLine($"Max: {max}, Min: {min}");
         }
@@ -660,6 +660,7 @@
             Console.WriteLine();
         }
 
+
         // 6. Search for a Number in an Array
         static void SearchNumber()
         {
@@ -675,6 +676,7 @@
             int search = int.Parse(Console.ReadLine());
 
             int index = Array.IndexOf(arr, search);
+            
             Console.WriteLine(index == -1 ? "Number not found." : $"Number found at index {index}");
         }
 
@@ -698,7 +700,7 @@
         {
             Console.Write("Enter the size of the arrays: ");
             int n = int.Parse(Console.ReadLine());
-            int[] arr1 = new int[n], arr2 = new int[n];
+            int[] arr1 = new int[n], arr2 = new int[n], merged = new int[2 * n];
 
             Console.WriteLine("Enter first array:");
             for (int i = 0; i < n; i++) arr1[i] = int.Parse(Console.ReadLine());
@@ -706,11 +708,13 @@
             Console.WriteLine("Enter second array:");
             for (int i = 0; i < n; i++) arr2[i] = int.Parse(Console.ReadLine());
 
-            int[] merged = new int[2 * n];
-            arr1.CopyTo(merged, 0);
-            arr2.CopyTo(merged, n);
+            for (int i = 0; i < n; i++) merged[i] = arr1[i];
+            for (int i = 0; i < n; i++) merged[n + i] = arr2[i];
 
-            Console.WriteLine("Merged Array: " + string.Join(" ", merged));
+            Console.WriteLine("Merged Array:");
+            for (int i = 0; i < 2 * n; i++)
+                Console.Write(merged[i] + " ");
+            Console.WriteLine();
         }
 
         // 9. Remove Duplicates from an Array
@@ -721,11 +725,19 @@
             int[] arr = new int[n];
 
             Console.WriteLine("Enter elements:");
-            for (int i = 0; i < n; i++)
-                arr[i] = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++) arr[i] = int.Parse(Console.ReadLine());
 
-            int[] uniqueArr = arr.Distinct().ToArray();
-            Console.WriteLine("Array without duplicates: " + string.Join(" ", uniqueArr));
+            Console.WriteLine("Array without duplicates:");
+            for (int i = 0; i < n; i++)
+            {
+                bool isDuplicate = false;
+                for (int j = 0; j < i; j++)
+                {
+                    if (arr[i] == arr[j]) isDuplicate = true;
+                }
+                if (!isDuplicate) Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
         }
 
         // 10. Find Second Largest Number
@@ -736,12 +748,20 @@
             int[] arr = new int[n];
 
             Console.WriteLine("Enter elements:");
-            for (int i = 0; i < n; i++)
-                arr[i] = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++) arr[i] = int.Parse(Console.ReadLine());
 
-            Array.Sort(arr);
-            int secondLargest = arr.Distinct().Reverse().Skip(1).FirstOrDefault();
-            Console.WriteLine($"Second Largest Number: {secondLargest}");
+            int largest = int.MinValue, secondLargest = int.MinValue;
+            for (int i = 0; i < n; i++)
+            {
+                if (arr[i] > largest)
+                {
+                    secondLargest = largest;
+                    largest = arr[i];
+                }
+                else if (arr[i] > secondLargest && arr[i] != largest)
+                    secondLargest = arr[i];
+            }
+            Console.WriteLine($"Second Largest: {secondLargest}");
         }
 
     }
