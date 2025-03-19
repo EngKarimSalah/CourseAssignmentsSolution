@@ -1,4 +1,4 @@
-﻿namespace ExercisesPart1Solve
+﻿namespace ExercisesSolutions
 {
     internal class Program
     {
