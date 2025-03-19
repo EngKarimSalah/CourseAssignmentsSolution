@@ -263,65 +263,85 @@
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+            //Exercises part2
 
+            //while (true)
+            //{
+            //    Console.Clear();
+            //    Console.WriteLine("\nSelect a Program:");
+            //    Console.WriteLine("1. Simple Calculator");
+            //    Console.WriteLine("2. Basic ATM System");
+            //    Console.WriteLine("3. Geometry Calculator");
+            //    Console.WriteLine("4. Factorial of a Number");
+            //    Console.WriteLine("5. Sum of Even and Odd Numbers");
+            //    Console.WriteLine("6. Scientific Calculator");
+            //    Console.WriteLine("7. Print Triangle Pattern");
+            //    Console.WriteLine("8. Print Pyramid Pattern");
+            //    Console.WriteLine("9. Print Diamond Pattern");
+            //    Console.WriteLine("10. Guess the Number Game");
+            //    Console.WriteLine("0. Exit");
 
+            //    Console.Write("Enter your choice: ");
+            //    int choice = int.Parse(Console.ReadLine());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            //    switch (choice)
+            //    {
+            //        case 1: SimpleCalculator(); break;
+            //        case 2: BasicATM(); break;
+            //        case 3: GeometryCalculator(); break;
+            //        case 4: Factorial(); break;
+            //        case 5: SumEvenOdd(); break;
+            //        case 6: ScientificCalculator(); break;
+            //        case 7: PrintTriangle(); break;
+            //        case 8: PrintPyramid(); break;
+            //        case 9: PrintDiamond(); break;
+            //        case 10: GuessGame(); break;
+            //        case 0: return;
+            //        default: Console.WriteLine("Invalid Choice! Try again."); break;
+            //    }
+            //    Console.ReadLine();
+            //}
 
 
 
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("\nSelect a Program:");
-                Console.WriteLine("1. Simple Calculator");
-                Console.WriteLine("2. Basic ATM System");
-                Console.WriteLine("3. Geometry Calculator");
-                Console.WriteLine("4. Factorial of a Number");
-                Console.WriteLine("5. Sum of Even and Odd Numbers");
-                Console.WriteLine("6. Scientific Calculator");
-                Console.WriteLine("7. Print Triangle Pattern");
-                Console.WriteLine("8. Print Pyramid Pattern");
-                Console.WriteLine("9. Print Diamond Pattern");
-                Console.WriteLine("10. Guess the Number Game");
+                Console.WriteLine("\nChoose an Array Exercise:");
+                Console.WriteLine("1. Array Initialization & Output");
+                Console.WriteLine("2. Find Maximum & Minimum in an Array");
+                Console.WriteLine("3. Sum & Average of an Array");
+                Console.WriteLine("4. Count Even & Odd Numbers");
+                Console.WriteLine("5. Reverse an Array");
+                Console.WriteLine("6. Search for a Number in an Array");
+                Console.WriteLine("7. Sorting an Array (Ascending Order)");
+                Console.WriteLine("8. Merging Two Arrays");
+                Console.WriteLine("9. Remove Duplicates from an Array");
+                Console.WriteLine("10. Find Second Largest Number");
                 Console.WriteLine("0. Exit");
-
                 Console.Write("Enter your choice: ");
+
                 int choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
                 {
-                    case 1: SimpleCalculator(); break;
-                    case 2: BasicATM(); break;
-                    case 3: GeometryCalculator(); break;
-                    case 4: Factorial(); break;
-                    case 5: SumEvenOdd(); break;
-                    case 6: ScientificCalculator(); break;
-                    case 7: PrintTriangle(); break;
-                    case 8: PrintPyramid(); break;
-                    case 9: PrintDiamond(); break;
-                    case 10: GuessGame(); break;
+                    case 1: ArrayInitialization(); break;
+                    case 2: FindMaxMin(); break;
+                    case 3: SumAndAverage(); break;
+                    case 4: CountEvenOdd(); break;
+                    case 5: ReverseArray(); break;
+                    case 6: SearchNumber(); break;
+                    case 7: SortArray(); break;
+                    case 8: MergeArrays(); break;
+                    case 9: RemoveDuplicates(); break;
+                    case 10: FindSecondLargest(); break;
                     case 0: return;
-                    default: Console.WriteLine("Invalid Choice! Try again."); break;
+                    default: Console.WriteLine("Invalid choice! Try again."); break;
                 }
+
                 Console.ReadLine();
             }
         }
-
         // 1. Simple Calculator
         static void SimpleCalculator()
         {
@@ -345,41 +365,41 @@
         // 2. Basic ATM System
         static void BasicATM()
         {
-            double balance = 1000;
-            while (true)
-            {
-                Console.WriteLine("\nATM Menu:");
-                Console.WriteLine("1. Withdraw");
-                Console.WriteLine("2. Deposit");
-                Console.WriteLine("3. Check Balance");
-                Console.WriteLine("4. Exit");
-                Console.Write("Enter your choice: ");
-                int choice = int.Parse(Console.ReadLine());
+            //double balance = 1000;
+            //while (true)
+            //{
+            //    Console.WriteLine("\nATM Menu:");
+            //    Console.WriteLine("1. Withdraw");
+            //    Console.WriteLine("2. Deposit");
+            //    Console.WriteLine("3. Check Balance");
+            //    Console.WriteLine("4. Exit");
+            //    Console.Write("Enter your choice: ");
+            //    int choice = int.Parse(Console.ReadLine());
 
-                switch (choice)
-                {
-                    case 1:
-                        Console.Write("Enter withdrawal amount: ");
-                        double withdraw = double.Parse(Console.ReadLine());
-                        if (withdraw > balance) Console.WriteLine("Insufficient funds!");
-                        else { balance -= withdraw; Console.WriteLine($"Withdrawal successful! New balance: {balance}"); }
-                        break;
-                    case 2:
-                        Console.Write("Enter deposit amount: ");
-                        double deposit = double.Parse(Console.ReadLine());
-                        balance += deposit;
-                        Console.WriteLine($"Deposit successful! New balance: {balance}");
-                        break;
-                    case 3:
-                        Console.WriteLine($"Current Balance: {balance}");
-                        break;
-                    case 4:
-                        return;
-                    default:
-                        Console.WriteLine("Invalid choice!");
-                        break;
-                }
-            }
+            //    switch (choice)
+            //    {
+            //        case 1:
+            //            Console.Write("Enter withdrawal amount: ");
+            //            double withdraw = double.Parse(Console.ReadLine());
+            //            if (withdraw > balance) Console.WriteLine("Insufficient funds!");
+            //            else { balance -= withdraw; Console.WriteLine($"Withdrawal successful! New balance: {balance}"); }
+            //            break;
+            //        case 2:
+            //            Console.Write("Enter deposit amount: ");
+            //            double deposit = double.Parse(Console.ReadLine());
+            //            balance += deposit;
+            //            Console.WriteLine($"Deposit successful! New balance: {balance}");
+            //            break;
+            //        case 3:
+            //            Console.WriteLine($"Current Balance: {balance}");
+            //            break;
+            //        case 4:
+            //            return;
+            //        default:
+            //            Console.WriteLine("Invalid choice!");
+            //            break;
+            //    }
+            //}
         }
 
         // 3. Geometry Calculator
@@ -553,6 +573,175 @@
 
 
 
+        }
+
+
+        ////////////////////////////////////////////////////////
+        ///
+        // 1. Array Initialization & Output
+        static void ArrayInitialization()
+        {
+            int[] arr = { 10, 20, 30, 40, 50 };
+            Console.WriteLine("Array Elements:");
+            foreach (int num in arr)
+                Console.Write(num + " ");
+            Console.WriteLine();
+        }
+
+        // 2. Find Maximum & Minimum in an Array
+        static void FindMaxMin()
+        {
+            int[] arr = new int[5];
+            Console.WriteLine("Enter 5 numbers:");
+            for (int i = 0; i < 5; i++)
+                arr[i] = int.Parse(Console.ReadLine());
+
+            int max = arr[0], min = arr[0];
+            foreach (int num in arr)
+            {
+                if (num > max) max = num;
+                if (num < min) min = num;
+            }
+            Console.WriteLine($"Max: {max}, Min: {min}");
+        }
+
+        // 3. Sum & Average of an Array
+        static void SumAndAverage()
+        {
+            Console.Write("Enter the number of elements: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+            int sum = 0;
+
+            Console.WriteLine("Enter elements:");
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+                sum += arr[i];
+            }
+
+            double avg = (double)sum / n;
+            Console.WriteLine($"Sum: {sum}, Average: {avg}");
+        }
+
+        // 4. Count Even & Odd Numbers
+        static void CountEvenOdd()
+        {
+            Console.Write("Enter the number of elements: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+
+            int evenCount = 0, oddCount = 0;
+            Console.WriteLine("Enter elements:");
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+                if (arr[i] % 2 == 0) evenCount++;
+                else oddCount++;
+            }
+
+            Console.WriteLine($"Even count: {evenCount}, Odd count: {oddCount}");
+        }
+
+        // 5. Reverse an Array
+        static void ReverseArray()
+        {
+            Console.Write("Enter the number of elements: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+
+            Console.WriteLine("Enter elements:");
+            for (int i = 0; i < n; i++)
+                arr[i] = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Reversed Array:");
+            for (int i = n - 1; i >= 0; i--)
+                Console.Write(arr[i] + " ");
+            Console.WriteLine();
+        }
+
+        // 6. Search for a Number in an Array
+        static void SearchNumber()
+        {
+            Console.Write("Enter the number of elements: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+
+            Console.WriteLine("Enter elements:");
+            for (int i = 0; i < n; i++)
+                arr[i] = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter number to search: ");
+            int search = int.Parse(Console.ReadLine());
+
+            int index = Array.IndexOf(arr, search);
+            Console.WriteLine(index == -1 ? "Number not found." : $"Number found at index {index}");
+        }
+
+        // 7. Sorting an Array (Ascending Order)
+        static void SortArray()
+        {
+            Console.Write("Enter the number of elements: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+
+            Console.WriteLine("Enter elements:");
+            for (int i = 0; i < n; i++)
+                arr[i] = int.Parse(Console.ReadLine());
+
+            Array.Sort(arr);
+            Console.WriteLine("Sorted Array: " + string.Join(" ", arr));
+        }
+
+        // 8. Merging Two Arrays
+        static void MergeArrays()
+        {
+            Console.Write("Enter the size of the arrays: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] arr1 = new int[n], arr2 = new int[n];
+
+            Console.WriteLine("Enter first array:");
+            for (int i = 0; i < n; i++) arr1[i] = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter second array:");
+            for (int i = 0; i < n; i++) arr2[i] = int.Parse(Console.ReadLine());
+
+            int[] merged = new int[2 * n];
+            arr1.CopyTo(merged, 0);
+            arr2.CopyTo(merged, n);
+
+            Console.WriteLine("Merged Array: " + string.Join(" ", merged));
+        }
+
+        // 9. Remove Duplicates from an Array
+        static void RemoveDuplicates()
+        {
+            Console.Write("Enter the number of elements: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+
+            Console.WriteLine("Enter elements:");
+            for (int i = 0; i < n; i++)
+                arr[i] = int.Parse(Console.ReadLine());
+
+            int[] uniqueArr = arr.Distinct().ToArray();
+            Console.WriteLine("Array without duplicates: " + string.Join(" ", uniqueArr));
+        }
+
+        // 10. Find Second Largest Number
+        static void FindSecondLargest()
+        {
+            Console.Write("Enter the number of elements: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+
+            Console.WriteLine("Enter elements:");
+            for (int i = 0; i < n; i++)
+                arr[i] = int.Parse(Console.ReadLine());
+
+            Array.Sort(arr);
+            int secondLargest = arr.Distinct().Reverse().Skip(1).FirstOrDefault();
+            Console.WriteLine($"Second Largest Number: {secondLargest}");
         }
 
     }
