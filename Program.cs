@@ -582,25 +582,33 @@
         static void ArrayInitialization()
         {
             int[] arr = { 10, 20, 30, 40, 50 };
+
             Console.WriteLine("Array Elements:");
             for (int i = 0; i < arr.Length; i++)
                 Console.Write(arr[i] + " ");
+
             Console.WriteLine();
         }
 
         // 2. Find Maximum & Minimum in an Array
         static void FindMaxMin()
         {
-            int[] arr = new int[10];
-            Console.WriteLine("Enter 10 numbers:");
-            for (int i = 0; i < 10; i++)
+            Console.Write("Enter the number of elements: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+           
+            Console.WriteLine("Enter numbers:");
+            for (int i = 0; i < n; i++)
                 arr[i] = int.Parse(Console.ReadLine());
 
             int max = arr[0], min = arr[0];
             for (int i = 1; i < arr.Length; i++)
             {
-                if (arr[i] > max) max = arr[i];
-                if (arr[i] < min) min = arr[i];
+                if (arr[i] > max)  
+                    max = arr[i]; 
+                
+                if (arr[i] < min) 
+                    min = arr[i];
             }
             Console.WriteLine($"Max: {max}, Min: {min}");
         }
@@ -640,7 +648,8 @@
                 else oddCount++;
             }
 
-            Console.WriteLine($"Even count: {evenCount}, Odd count: {oddCount}");
+            Console.WriteLine("Even Count:" + evenCount +" Odd Count:" + oddCount);
+            Console.WriteLine($"Even count: {evenCount} Odd count: {oddCount}");
         }
 
         // 5. Reverse an Array
@@ -675,8 +684,37 @@
             Console.Write("Enter number to search: ");
             int search = int.Parse(Console.ReadLine());
 
-            int index = Array.IndexOf(arr, search);
-            
+            //int index = Array.IndexOf(arr, search);
+
+            int index = -1;
+            int[] indexes = new int[arr.Length];
+
+            for(int i=0; i<arr.Length; i++)
+            {
+
+                if (arr[i] == search)
+                {
+                    // Console.WriteLine(i);
+                    index = i;
+                    break;
+                }
+                //if (arr[i]==search)
+                //{
+                //    indexes[i] = i;
+                //}
+
+
+                
+
+            }
+
+            if (index != -1)
+                Console.WriteLine(index);
+            else
+                Console.WriteLine("not found");
+
+
+
             Console.WriteLine(index == -1 ? "Number not found." : $"Number found at index {index}");
         }
 
@@ -708,8 +746,14 @@
             Console.WriteLine("Enter second array:");
             for (int i = 0; i < n; i++) arr2[i] = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < n; i++) merged[i] = arr1[i];
-            for (int i = 0; i < n; i++) merged[n + i] = arr2[i];
+            for (int i = 0; i < n; i++) 
+                merged[i] = arr1[i];
+
+
+
+
+            for (int i = 0; i < n; i++) 
+                merged[n + i] = arr2[i];
 
             Console.WriteLine("Merged Array:");
             for (int i = 0; i < 2 * n; i++)
@@ -731,9 +775,13 @@
             for (int i = 0; i < n; i++)
             {
                 bool isDuplicate = false;
-                for (int j = 0; j < i; j++)
+                for (int j = i + 1; j < n; j++)
                 {
-                    if (arr[i] == arr[j]) isDuplicate = true;
+                    if (arr[i] == arr[j])
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
                 }
                 if (!isDuplicate) Console.Write(arr[i] + " ");
             }
@@ -751,6 +799,7 @@
             for (int i = 0; i < n; i++) arr[i] = int.Parse(Console.ReadLine());
 
             int largest = int.MinValue, secondLargest = int.MinValue;
+           
             for (int i = 0; i < n; i++)
             {
                 if (arr[i] > largest)
