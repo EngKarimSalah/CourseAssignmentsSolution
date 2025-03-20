@@ -2,8 +2,17 @@
 {
     internal class Program
     {
+
+       
+        static double[] marks = new double[10];
+        static int[] Ages = new int[10];
+        static string[] names = new string[10];
+        static DateTime[] dates = new DateTime[10];
+        static int StudentCounter = 0;
+
         static void Main(string[] args)
         {
+           
             ////postfix and prefix
             //int x , k;
             //x = k = 6;          
@@ -345,6 +354,16 @@
         // 1. Simple Calculator
         static void SimpleCalculator()
         {
+            StudentCounter++;
+
+            for (int i = 0; i < 3; i++)
+            {
+
+                Console.WriteLine(marks[i]);
+            }
+
+
+
             Console.Write("Enter first number: ");
             double num1 = double.Parse(Console.ReadLine());
             Console.Write("Enter operator (+, -, *, /): ");
